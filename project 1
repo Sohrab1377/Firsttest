@@ -232,6 +232,7 @@
         .ProductImg img {
             width: 150px;
             height: 150px;
+            object-fit: contain;
         }
 
         .ProductSlice {
@@ -312,7 +313,6 @@
         }
     </style>
 </head>
-
 <body>
     <div id="header">
         <div class="topIcon">
@@ -463,8 +463,6 @@
                         <input type="checkbox" id="saveAddress" name="saveAddress" value="saveAddress">
                         <label for="age1" id="CheckboxLabel">Save address to my profile</label>
                     </div>
-
-                    <!-- <input type="submit" value="Submit"> -->
                 </form>
             </div>
             <div class="BodySideTitle">
@@ -517,7 +515,7 @@
                 <div id="ProductLine"></div>
                 <div class="ProductSlice">
                     <div class="ProductImg">
-                        <img src="Image1.jpeg">
+                        <img src="https://store.liverpoolfc.com/media/catalog/product/cache/dd504f005c0b90ffe1b9fb2344db1a87/D/A/DA7061.jpg">
                     </div>
                     <div class="ProductDetail">
                         <div class="ProductDetailTitle">Liverpool F.C. 21/22 Home kit Goalkeeper</div>
@@ -528,7 +526,7 @@
                 <div id="ProductLine"></div>
                 <div class="ProductSlice">
                     <div class="ProductImg">
-                        <img src="Image2.jpeg">
+                        <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/777fdf9a-52d8-4b79-bffe-68dabe65f5a9/fc-barcelona-2021-22-stadium-third-dri-fit-football-shirt-hfkmkt.png">
                     </div>
                     <div class="ProductDetail">
                         <div class="ProductDetailTitle">F.C Barcellona 2021/22 stadium Home</div>
@@ -540,5 +538,4 @@
         </div>
     </div>
 </body>
-
 </html>

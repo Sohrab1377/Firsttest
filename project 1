@@ -1,1 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: system-ui;
+        }
+
+        #hearderTitle p {
+            font-size: 36px;
+            font-weight: 600;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .topIcon {
+            width: 30px;
+            padding: 0 40px;
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .topBarIcon {
+            width: 5vw;
+            background-color: lightgrey;
+            border-radius: 50%;
+            height: 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .SideDes {
+            padding-left: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #topBar {
+            /* width: 100%; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 80px 30px 50px 30px;
+            /* overflow: auto; */
+        }
+
+        .topBarSide {
+            display: flex;
+            width: calc(25% - 90px);
+            align-items: center;
+        }
+
+        .topBarIcon svg {
+            width: 3vw;
+        }
+
+        .SideTitle {
+            font-weight: 500;
+            font-size: 13px;
+            color: #898989;
+        }
+
+        .SideText {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .sepLine {
+            width: 70px;
+            height: 2px;
+            background-color: #91919149;
+            margin: 0 25px;
+        }
+
+        #bottomTopBar {
+            width: calc(100% - 60px);
+            height: 2px;
+            background-color: #91919126;
+            margin: 0 30px;
+        }
+
+        #ProductLine {
+            width: calc(100% - 6px);
+            height: 2px;
+            background-color: #91919126;
+            margin: 0 3px;
+        }
+
+        #ResponsiveLine {
+            display: none;
+            width: calc(100% - 10px);
+            height: 2px;
+            background-color: #91919126;
+            margin: 0 5px 30px 5px;
+        }
+
+        #MainBody {
+            width: 100%;
+            display: flex;
+            padding-top: 50px;
+            flex-direction: row;
+        }
+
+        #leftSide {
+            width: calc(50% - 30px);
+            margin: 0 30px;
+        }
+
+        #rightSide {
+            width: calc(50% - 30px);
+            margin: 0 30px;
+        }
+
+        .BodySideTitle {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .formBoxTow {
+            display: flex;
+            margin: 25px 0;
+        }
+
+        .formBoxTow div {
+            width: calc(100% - 30px);
+        }
+
+        .formTextBox {
+            width: calc(100% - 30px);
+            padding: 10px;
+            border: 1px solid #97979775;
+            outline: 0;
+        }
+
+        input[type=text]:focus {
+            border: 1px solid #818181;
+            background-color: #c1c1c111;
+        }
+
+        .formBox {
+            margin: 0 0 25px 0;
+        }
+
+        #formContainer {
+            margin: 20px 50px 0 0;
+        }
+
+        .formLabel {
+            padding-bottom: 10px;
+            font-size: 14px;
+        }
+
+        #saveAddress {
+            width: 1.7em;
+            height: 1.7em;
+            background-color: white;
+            border-radius: 50%;
+            vertical-align: middle;
+            border: 1px solid #909090;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        #saveAddress:checked {
+            background-color: rgb(0, 122, 255);
+        }
+
+        .formCheckbox {
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #CheckboxLabel {
+            padding: 10px;
+        }
+
+        #provincialState {
+            width: calc(100% - 9px);
+            padding: 9px;
+            border: 1px solid #97979775;
+            outline: 0;
+        }
+
+        #provincialState:focus {
+            border: 2px solid #979797;
+        }
+
+        #PriceContainer {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .PriceSlice {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 25px 0;
+        }
+
+        .PriceName {
+            color: #959595;
+            font-size: 14px;
+        }
+
+        .Price {
+            font-weight: 500;
+        }
+
+        #Total,
+        #TotalPrice {
+            font-size: 21px;
+            color: black;
+            font-weight: 600;
+        }
+
+        .ProductImg img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .ProductSlice {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .ProductImg {
+            display: flex;
+            align-items: center;
+        }
+
+        .ProductDetail {
+            width: calc(100% - 10px);
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ProductDetailTitle {
+            font-size: 18px;
+            font-weight: 500;
+            width: 70%;
+        }
+
+        .ProductDetailDes {
+            color: #959595;
+            font-size: 14px;
+        }
+
+        .ProductDetailPrice {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        #topBarContainer {
+            width: 100%;
+            overflow: auto;
+        }
+
+        @media screen and (max-width: 760px) {
+            #MainBody {
+                flex-direction: column;
+            }
+
+            #leftSide {
+                width: calc(100% - 60px);
+                margin: 0 30px;
+            }
+
+            #rightSide {
+                width: calc(100% - 60px);
+                margin: 0 30px;
+            }
+
+            #topBar {
+                width: max-content;
+                justify-content: flex-start;
+            }
+
+            .topBarSide {
+                width: max-content;
+            }
+
+            .topBarIcon {
+                width: 10vw;
+                height: 10vw;
+            }
+
+            .topBarIcon svg {
+                width: 6vw;
+            }
+
+            #ResponsiveLine {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="topIcon">
+            <svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+        </div>
+        <div id="hearderTitle">
+            <p>Jerskits.</p>
+        </div>
+        <div class="topIcon">
+            <svg id="shopping-bag" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- topBar -->
+    <div id="topBarContainer">
+        <div id="topBar">
+            <div class="topBarSide">
+                <div class="topBarIcon" style="background-color: black;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="White" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div class="SideDes">
+                    <div class="SideTitle">
+                        FIRST STEP
+                    </div>
+                    <div class="SideText">
+                        Information
+                    </div>
+                </div>
+            </div>
+
+            <div class="sepLine"></div>
+
+            <div class="topBarSide">
+                <div class="topBarIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                </div>
+                <div class="SideDes">
+                    <div class="SideTitle">
+                        SECOND STEP
+                    </div>
+                    <div class="SideText">
+                        Delivery
+                    </div>
+                </div>
+            </div>
+
+            <div class="sepLine"></div>
+
+            <div class="topBarSide">
+                <div class="topBarIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg>
+                </div>
+                <div class="SideDes">
+                    <div class="SideTitle">
+                        THIRD STEP
+                    </div>
+                    <div class="SideText">
+                        Billing
+                    </div>
+                </div>
+            </div>
+
+            <div class="sepLine"></div>
+
+            <div class="topBarSide">
+                <div class="topBarIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div class="SideDes">
+                    <div class="SideTitle">
+                        FOURTH STEP
+                    </div>
+                    <div class="SideText">
+                        Payment
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bottomTopBar"></div>
+
+    <div id="MainBody">
+        <div id="leftSide">
+            <div class="BodySideTitle">
+                Name & Address
+            </div>
+            <div id="formContainer">
+                <form id="userData">
+                    <div class="formBox">
+                        <div class="formLabel">First name</div>
+                        <input class="formTextBox" type="text" id="fname" name="fname" placeholder="First name">
+                    </div>
+                    <div class="formBox">
+                        <div class="formLabel">Last name</div>
+                        <input class="formTextBox" type="text" id="lname" name="lname" placeholder="First name">
+                    </div>
+                    <div class="formBox">
+                        <div class="formLabel">Address</div>
+                        <textarea class="formTextBox" id="Address" name="Address" rows="3"></textarea>
+                    </div>
+                    <div class="formBoxTow">
+                        <div>
+                            <div class="formLabel">Postal Code</div>
+                            <input class="formTextBox" type="text" id="Postal" name="Postal" value="50524">
+                        </div>
+                        <div>
+                            <div class="formLabel">City</div>
+                            <input class="formTextBox" type="text" id="City" name="City" value="Tehran">
+                        </div>
+                    </div>
+                    <div class="formBoxTow">
+                        <div>
+                            <div class="formLabel">provincialState</div>
+                            <select id="provincialState" name="provincialState">
+                                <option value="Select" selected>Select</option>
+                                <option value="Select2">Select2</option>
+                                <option value="Select3">Select3</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div class="formLabel">Country</div>
+                            <input class="formTextBox" type="text" id="Country" name="Country" value="IRAN">
+                        </div>
+                    </div>
+                    <div class="formCheckbox">
+                        <input type="checkbox" id="saveAddress" name="saveAddress" value="saveAddress">
+                        <label for="age1" id="CheckboxLabel">Save address to my profile</label>
+                    </div>
+
+                    <!-- <input type="submit" value="Submit"> -->
+                </form>
+            </div>
+            <div class="BodySideTitle">
+                Contact
+            </div>
+            <div id="ResponsiveLine"></div>
+        </div>
+        <div id="rightSide">
+
+            <div class="BodySideTitle">
+                Order Summary
+            </div>
+
+            <div id="PriceContainer">
+                <div class="PriceSlice">
+                    <div class="PriceName" id="Subtotal">
+                        Subtotal
+                    </div>
+                    <div class="Price" id="SubtotalPrice">
+                        $119.32
+                    </div>
+                </div>
+                <div class="PriceSlice">
+                    <div class="PriceName" id="Tax">
+                        Duties & Tax
+                    </div>
+                    <div class="Price" id="TaxPrice">
+                        $90
+                    </div>
+                </div>
+                <div class="PriceSlice">
+                    <div class="PriceName" id="Delivery">
+                        Delivery
+                    </div>
+                    <div class="Price" id="DeliveryPrice">
+                        $10
+                    </div>
+                </div>
+                <div class="PriceSlice">
+                    <div class="PriceName" id="Total">
+                        Total
+                    </div>
+                    <div class="Price" id="TotalPrice">
+                        $219.32
+                    </div>
+                </div>
+            </div>
+
+            <div id="Product">
+                <div id="ProductLine"></div>
+                <div class="ProductSlice">
+                    <div class="ProductImg">
+                        <img src="Image1.jpeg">
+                    </div>
+                    <div class="ProductDetail">
+                        <div class="ProductDetailTitle">Liverpool F.C. 21/22 Home kit Goalkeeper</div>
+                        <div class="ProductDetailDes">Football Sizer L QTY1</div>
+                        <div class="ProductDetailPrice">$59.66</div>
+                    </div>
+                </div>
+                <div id="ProductLine"></div>
+                <div class="ProductSlice">
+                    <div class="ProductImg">
+                        <img src="Image2.jpeg">
+                    </div>
+                    <div class="ProductDetail">
+                        <div class="ProductDetailTitle">F.C Barcellona 2021/22 stadium Home</div>
+                        <div class="ProductDetailDes">Football Sizer L QTY1</div>
+                        <div class="ProductDetailPrice">$59.66</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
